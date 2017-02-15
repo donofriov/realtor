@@ -1,0 +1,81 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='x-ua-compatible' content='ie=edge')
+    title="Realtor App - WEB 230"
+    //if lt IE 9
+      script var elementsArray = ['abbr', 'article', 'aside', 'audio', 'bdi', 'canvas', 'data', 'datalist', 'details', 'figcaption', 'figure', 'footer', 'header', 'main', 'mark', 'meter', 'nav', 'output', 'progress', 'section', 'summary', 'template', 'time', 'video']; var len = elementsArray.length; for(i = 0; i < len; i++){document.createElement(elementsArray[i]);}
+    link(rel="stylesheet" href="css/style.css")
+    link(rel="icon" href="../images/favicon.ico" type="image/x-icon")
+
+  body
+    div#wrapper
+      header
+        h1 My Properties
+      main
+        div.form#addressform
+          h2
+            span Enter Property Address
+          form(method="post" action='/' id="addressform1")  
+            ul
+              li
+                label.top Address:
+                input(type="text" required id="number" size="30" name="number" tabindex="10")
+              li
+                label City:
+                input(type="text" required id="city" size="30" name="city" tabindex="20")
+              li
+                label State:
+                input(type="text" required id="state" size="30" name="state" tabindex="30")
+              li
+                label Zip:
+                input(type="text" required id="zip" size="30" name="zip" tabindex="40")
+              li#bottom
+                input(type="submit", name="getZillowData", id="getZillowData", value="Submit", tabindex="50") 
+        div#tabwrapper
+          div#tabnav
+            ul#tabs
+              li(tabindex="60")
+                a(id="maptabb" class="active") Map
+              li(tabindex="70")
+                a(id="calctabb" class="disabled") Calc
+              li(tabindex="80")
+                a(id="compstabb" class="disabled" onclick="getCompData();") Comps
+          div#tabContainer
+            div.tabContent#maptab.show
+              div#googleMap Map will appear here
+            div.tabContent#calctab.hide
+              div.form#calcform 
+                h2
+                  span Loan Calculator
+                form(style="width:300px;" id="calcForm1" method="post" action='/')
+                  ul
+                    li.floatright
+                      label.floater.top Loan Amount:
+                      input(class="margeme" type="text", id="loanAmount", size="20", tabindex="90")
+                    li.floatright
+                      label.floater Interest:
+                      input(type="text", id="interest", size="20", tabindex="100")
+                    li.floatright
+                      label.floater Number of Months:
+                      input(type="text", id="months", size="20", tabindex="110")
+                    li.floatright
+                      input(type="button", id ="calcBut", name="calculate", value="Get Monthly Amount", onclick="loanCalculator();", tabindex="120")
+                    div#calculate
+                    div#error1
+                    div#error2
+                    div#error3    
+
+            div.tabContent#compstab.hide
+              div#message Comps will appear here
+        div#localweb
+          input(type="button" value="Add Property to List" id="add" onclick="saveLocal();" disabled)
+          h2 My Properties List
+          div#displaylocal
+
+    script(type ="text/javascript" src='js/main.js')
+    script(type ='text/javascript' src='js/calc.js')
+    script(type ='text/javascript' src='js/ajax.js')
+    // Google Maps API
+    script(type ='text/javascript' src='https://maps.google.com/maps/api/js?key=AIzaSyDktPx0sRFwptcdKDAe52j5a8LnKCgTN24')     

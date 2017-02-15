@@ -1,0 +1,29 @@
+{
+  "name": "realtor",
+  "version": "1.0.0",
+  "description": "Realtor App WEB 230",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.12.4",
+    "formidable": "^1.0.17",
+    "jade": "latest"
+  },
+  "engines": {
+      "node": "4.2.1",
+      "npm": "2.1.x"
+    },
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/donofriov/realtor.git"
+  },
+  "author": "Vincent D'Onofrio",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/donofriov/realtor/issues"
+  },
+  "homepage": "https://github.com/donofriov/realtor#readme"
+}
