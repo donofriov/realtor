@@ -1,5 +1,7 @@
 # Realtor App
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/donofriov/realtor.svg)](https://greenkeeper.io/)
+
 ### Demo
 http://realtor-app.herokuapp.com/
 
